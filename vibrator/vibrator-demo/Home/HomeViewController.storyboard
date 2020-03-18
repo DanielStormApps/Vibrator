@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4Nm-D6-W3W">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="toj-4g-7A9">
+            <objects>
+                <viewController storyboardIdentifier="HomeViewController" id="4Nm-D6-W3W" customClass="HomeViewController" customModule="vibrator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2vu-Wh-GAp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vibrator Demo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xdO-6o-tk4">
+                                <rect key="frame" x="12" y="32" width="390" height="43"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device Supports Haptics: ✅ Yes" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXd-hK-His">
+                                <rect key="frame" x="113.33333333333333" y="87" width="187.66666666666669" height="14.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="sIG-cw-BRm">
+                                <rect key="frame" x="12" y="206" width="390" height="324"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8cw-ed-rCN">
+                                        <rect key="frame" x="119" y="0.0" width="152" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="V96-w1-cv3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="💓 Heartbeat Haptic">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="heartHapticButton:" destination="4Nm-D6-W3W" eventType="touchUpInside" id="8kW-Sd-r0t"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ms-y7-4Je">
+                                        <rect key="frame" x="78" y="56" width="234" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="w09-Qf-UQP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="💓 Heartbeat Haptic + 🔁 Loop">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="heartHapticLoopButton:" destination="4Nm-D6-W3W" eventType="touchUpInside" id="jgK-I5-2aM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhJ-GM-Uhm">
+                                        <rect key="frame" x="126" y="112" width="138" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="gsA-l7-7ON"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="📳 System Vibrate">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="systemVibrateButton:" destination="4Nm-D6-W3W" eventType="touchUpInside" id="4DY-4L-0n1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oqf-tY-xdi">
+                                        <rect key="frame" x="61.666666666666686" y="168" width="267" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Fia-JA-did"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="📳 System Vibrate + 🔁 Loop + Low">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="systemVibrateLoopLowButton:" destination="4Nm-D6-W3W" eventType="touchUpInside" id="b2w-Nz-5Ui"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="va8-er-X0x">
+                                        <rect key="frame" x="59" y="224" width="272" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="ro9-Ws-w0D"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="📳 System Vibrate + 🔁 Loop + High">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="systemVibrateLoopHighButton:" destination="4Nm-D6-W3W" eventType="touchUpInside" id="74w-Z4-7nH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dB-pA-JzU">
+                                        <rect key="frame" x="155.66666666666666" y="280" width="79" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="71Q-xt-fxm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <state key="normal" title="🛑 Stop Loop">
+                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopLoopButton:" destination="4Nm-D6-W3W" eventType="touchUpInside" id="bSR-cS-s5H"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="eTf-sU-fEw" firstAttribute="trailing" secondItem="xdO-6o-tk4" secondAttribute="trailing" constant="12" id="0tP-VO-02k"/>
+                            <constraint firstItem="sIG-cw-BRm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="LXd-hK-His" secondAttribute="bottom" constant="32" id="1gP-J9-kZI"/>
+                            <constraint firstItem="sIG-cw-BRm" firstAttribute="centerY" secondItem="2vu-Wh-GAp" secondAttribute="centerY" priority="250" id="47X-ig-hES"/>
+                            <constraint firstItem="sIG-cw-BRm" firstAttribute="centerX" secondItem="2vu-Wh-GAp" secondAttribute="centerX" id="5zi-gV-7ru"/>
+                            <constraint firstItem="LXd-hK-His" firstAttribute="centerX" secondItem="2vu-Wh-GAp" secondAttribute="centerX" id="EoV-8C-sth"/>
+                            <constraint firstItem="eTf-sU-fEw" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="sIG-cw-BRm" secondAttribute="bottom" constant="32" id="OUy-6B-QH2"/>
+                            <constraint firstItem="eTf-sU-fEw" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="LXd-hK-His" secondAttribute="trailing" constant="12" id="RVH-c6-HV0"/>
+                            <constraint firstItem="sIG-cw-BRm" firstAttribute="leading" secondItem="eTf-sU-fEw" secondAttribute="leading" constant="12" id="Xkv-RB-Pxw"/>
+                            <constraint firstItem="LXd-hK-His" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="eTf-sU-fEw" secondAttribute="leading" constant="12" id="cSf-fY-ZVR"/>
+                            <constraint firstItem="xdO-6o-tk4" firstAttribute="leading" secondItem="eTf-sU-fEw" secondAttribute="leading" constant="12" id="cZI-mH-bTh"/>
+                            <constraint firstItem="eTf-sU-fEw" firstAttribute="trailing" secondItem="sIG-cw-BRm" secondAttribute="trailing" constant="12" id="ghB-PY-lA0"/>
+                            <constraint firstItem="xdO-6o-tk4" firstAttribute="centerX" secondItem="2vu-Wh-GAp" secondAttribute="centerX" id="kfr-3F-q8t"/>
+                            <constraint firstItem="LXd-hK-His" firstAttribute="top" secondItem="xdO-6o-tk4" secondAttribute="bottom" constant="12" id="s18-jo-1T2"/>
+                            <constraint firstItem="xdO-6o-tk4" firstAttribute="top" secondItem="eTf-sU-fEw" secondAttribute="top" constant="32" id="xHG-Y7-jSq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eTf-sU-fEw"/>
+                    </view>
+                    <connections>
+                        <outlet property="deviceHapticSupportLabel" destination="LXd-hK-His" id="q9Z-Ee-Lmf"/>
+                        <outlet property="heartHapticButton" destination="8cw-ed-rCN" id="N0r-Hp-dLP"/>
+                        <outlet property="heartHapticLoopButton" destination="5ms-y7-4Je" id="6Gn-e7-nTa"/>
+                        <outlet property="stopLoopButton" destination="3dB-pA-JzU" id="tsd-z9-6QV"/>
+                        <outlet property="systemVibrateButton" destination="vhJ-GM-Uhm" id="AJs-tb-tlN"/>
+                        <outlet property="systemVibrateLoopHighButton" destination="va8-er-X0x" id="RLo-sU-D7R"/>
+                        <outlet property="systemVibrateLoopLowButton" destination="oqf-tY-xdi" id="gOd-j0-te7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pFV-c7-Unh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="134"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		841E137924216EB200940E53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E137824216EB200940E53 /* AppDelegate.swift */; };
+		841E137B24216EB200940E53 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E137A24216EB200940E53 /* SceneDelegate.swift */; };
+		841E138224216EB300940E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841E138124216EB300940E53 /* Assets.xcassets */; };
+		841E138524216EB300940E53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841E138324216EB300940E53 /* LaunchScreen.storyboard */; };
+		841E138F242171FE00940E53 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E138E242171FE00940E53 /* HomeViewController.swift */; };
+		841E13912421720A00940E53 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841E13902421720A00940E53 /* HomeViewController.storyboard */; };
+		841E139824217B6E00940E53 /* UIDevice+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E139724217B6E00940E53 /* UIDevice+Extensions.swift */; };
+		841E139C242182EB00940E53 /* AppleHapticAudioPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E139A242182EB00940E53 /* AppleHapticAudioPattern.swift */; };
+		841E139D242182EB00940E53 /* Vibrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E139B242182EB00940E53 /* Vibrator.swift */; };
+		841E139F2421857A00940E53 /* Heartbeat.ahap in Resources */ = {isa = PBXBuildFile; fileRef = 841E139E2421857A00940E53 /* Heartbeat.ahap */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		841E137524216EB200940E53 /* vibrator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vibrator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		841E137824216EB200940E53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		841E137A24216EB200940E53 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		841E138124216EB300940E53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		841E138424216EB300940E53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		841E138624216EB300940E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		841E138E242171FE00940E53 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		841E13902421720A00940E53 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
+		841E13922421741800940E53 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		841E13932421741E00940E53 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		841E139724217B6E00940E53 /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
+		841E139A242182EB00940E53 /* AppleHapticAudioPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleHapticAudioPattern.swift; sourceTree = "<group>"; };
+		841E139B242182EB00940E53 /* Vibrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vibrator.swift; sourceTree = "<group>"; };
+		841E139E2421857A00940E53 /* Heartbeat.ahap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Heartbeat.ahap; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		841E137224216EB200940E53 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		841E136C24216EB100940E53 = {
+			isa = PBXGroup;
+			children = (
+				841E13922421741800940E53 /* README.md */,
+				841E13932421741E00940E53 /* LICENSE */,
+				841E1399242182EB00940E53 /* Vibrator */,
+				841E137724216EB200940E53 /* vibrator-demo */,
+				841E137624216EB200940E53 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		841E137624216EB200940E53 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				841E137524216EB200940E53 /* vibrator.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		841E137724216EB200940E53 /* vibrator-demo */ = {
+			isa = PBXGroup;
+			children = (
+				841E137824216EB200940E53 /* AppDelegate.swift */,
+				841E137A24216EB200940E53 /* SceneDelegate.swift */,
+				841E138C2421719A00940E53 /* Launch */,
+				841E138D242171B500940E53 /* Home */,
+				841E139624217B0900940E53 /* Extensions */,
+				841E139424217ADA00940E53 /* Resources */,
+				841E138124216EB300940E53 /* Assets.xcassets */,
+				841E138624216EB300940E53 /* Info.plist */,
+			);
+			path = "vibrator-demo";
+			sourceTree = "<group>";
+		};
+		841E138C2421719A00940E53 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				841E138324216EB300940E53 /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		841E138D242171B500940E53 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				841E138E242171FE00940E53 /* HomeViewController.swift */,
+				841E13902421720A00940E53 /* HomeViewController.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		841E139424217ADA00940E53 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				841E139524217AE200940E53 /* Haptics */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		841E139524217AE200940E53 /* Haptics */ = {
+			isa = PBXGroup;
+			children = (
+				841E139E2421857A00940E53 /* Heartbeat.ahap */,
+			);
+			path = Haptics;
+			sourceTree = "<group>";
+		};
+		841E139624217B0900940E53 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				841E139724217B6E00940E53 /* UIDevice+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		841E1399242182EB00940E53 /* Vibrator */ = {
+			isa = PBXGroup;
+			children = (
+				841E139B242182EB00940E53 /* Vibrator.swift */,
+				841E139A242182EB00940E53 /* AppleHapticAudioPattern.swift */,
+			);
+			path = Vibrator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		841E137424216EB200940E53 /* vibrator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 841E138924216EB300940E53 /* Build configuration list for PBXNativeTarget "vibrator" */;
+			buildPhases = (
+				841E137124216EB200940E53 /* Sources */,
+				841E137224216EB200940E53 /* Frameworks */,
+				841E137324216EB200940E53 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = vibrator;
+			productName = vibrator;
+			productReference = 841E137524216EB200940E53 /* vibrator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		841E136D24216EB100940E53 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Daniel Storm";
+				TargetAttributes = {
+					841E137424216EB200940E53 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 841E137024216EB100940E53 /* Build configuration list for PBXProject "vibrator" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 841E136C24216EB100940E53;
+			productRefGroup = 841E137624216EB200940E53 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				841E137424216EB200940E53 /* vibrator */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		841E137324216EB200940E53 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841E138524216EB300940E53 /* LaunchScreen.storyboard in Resources */,
+				841E138224216EB300940E53 /* Assets.xcassets in Resources */,
+				841E139F2421857A00940E53 /* Heartbeat.ahap in Resources */,
+				841E13912421720A00940E53 /* HomeViewController.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		841E137124216EB200940E53 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				841E139D242182EB00940E53 /* Vibrator.swift in Sources */,
+				841E137924216EB200940E53 /* AppDelegate.swift in Sources */,
+				841E139824217B6E00940E53 /* UIDevice+Extensions.swift in Sources */,
+				841E137B24216EB200940E53 /* SceneDelegate.swift in Sources */,
+				841E139C242182EB00940E53 /* AppleHapticAudioPattern.swift in Sources */,
+				841E138F242171FE00940E53 /* HomeViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		841E138324216EB300940E53 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				841E138424216EB300940E53 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		841E138724216EB300940E53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "-Xfrontend -warn-long-function-bodies=200 -Xfrontend -warn-long-expression-type-checking=200";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		841E138824216EB300940E53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		841E138A24216EB300940E53 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E5BK5K7RRN;
+				INFOPLIST_FILE = "vibrator-demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DanielStorm.vibrator;
+				PRODUCT_NAME = vibrator;
+				PROVISIONING_PROFILE_SPECIFIER = "Vibrator Demo iOS Development Profile";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		841E138B24216EB300940E53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = E5BK5K7RRN;
+				INFOPLIST_FILE = "vibrator-demo/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.DanielStorm.vibrator;
+				PRODUCT_NAME = vibrator;
+				PROVISIONING_PROFILE_SPECIFIER = "Vibrator Demo iOS Development Profile";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		841E137024216EB100940E53 /* Build configuration list for PBXProject "vibrator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841E138724216EB300940E53 /* Debug */,
+				841E138824216EB300940E53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		841E138924216EB300940E53 /* Build configuration list for PBXNativeTarget "vibrator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				841E138A24216EB300940E53 /* Debug */,
+				841E138B24216EB300940E53 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 841E136D24216EB100940E53 /* Project object */;
+}
