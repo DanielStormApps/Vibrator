@@ -52,7 +52,12 @@ public class Vibrator {
     private init() {
         guard supportsHaptics else { return }
         hapticEngine = try? CHHapticEngine()
-        try? hapticEngine?.start()
+    }
+    
+    /// Prepares the vibrator by acquiring hardware needed for vibrations.
+    public func prepare() {
+        guard let hapticEngine: CHHapticEngine = hapticEngine else { return }
+        try? hapticEngine.start()
     }
     
     // MARK: - Vibrate
