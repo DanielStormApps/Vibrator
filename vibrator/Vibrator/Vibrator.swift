@@ -9,8 +9,8 @@ import Foundation
 import AudioToolbox
 import CoreHaptics
 
-/// A class that allows your app to play system vibrations and Apple Haptic and Audio Pattern (AHAP) files generated with [Lofelt Composer](https://composer.lofelt.com).
-public class Vibrator {
+/// A class that allows your app to play system vibrations and Apple Haptic and Audio Pattern (AHAP) files.
+public final class Vibrator {
     
     /// Options for device vibration rates when looping.
     public enum Frequency {
@@ -24,6 +24,10 @@ public class Vibrator {
             }
         }
     }
+    
+    /// Enables/disables logging to the console in a `#DEBUG` environment.
+    /// Default value is `false`.
+    public static var isDebugLoggingEnabled: Bool = false
     
     /// Indicates if the device supports haptic event playback.
     public let supportsHaptics: Bool = {
@@ -42,7 +46,6 @@ public class Vibrator {
     }
     
     private var hapticPlayer: CHHapticPatternPlayer?
-    
     private var vibrateLoopTimer: Timer?
     private var hapticLoopTimer: Timer?
     
@@ -51,13 +54,15 @@ public class Vibrator {
     public static let shared: Vibrator = Vibrator()
     private init() {
         guard supportsHaptics else { return }
-        hapticEngine = try? CHHapticEngine()
+        do { hapticEngine = try CHHapticEngine() }
+        catch { log("\(#function) -> Could not create haptic engine: \(error)") }
     }
     
     /// Prepares the vibrator by acquiring hardware needed for vibrations.
     public func prepare() {
         guard let hapticEngine: CHHapticEngine = hapticEngine else { return }
-        try? hapticEngine.start()
+        do { try hapticEngine.start() }
+        catch { log("\(#function) -> Could not start haptic engine: \(error)") }
     }
     
     // MARK: - Vibrate
@@ -102,7 +107,7 @@ public class Vibrator {
         guard
             let timer: Timer = vibrateLoopTimer,
             timer.isValid
-            else { return }
+        else { return }
         
         timer.invalidate()
         vibrateLoopTimer = nil
@@ -126,7 +131,8 @@ public class Vibrator {
     /// Has no effect if `loop` is `false` when starting the haptic.
     public func stopHaptic() {
         stopHapticLoopTimer()
-        try? hapticPlayer?.stop(atTime: CHHapticTimeImmediate)
+        do { try hapticPlayer?.stop(atTime: CHHapticTimeImmediate) }
+        catch { log("\(#function) -> Could not stop haptic engine: \(error)") }
         hapticPlayer = nil
     }
     
@@ -134,32 +140,65 @@ public class Vibrator {
         guard
             let hapticEngine: CHHapticEngine = hapticEngine,
             let hapticPath: String = Bundle.main.path(forResource: filename, ofType: AppleHapticAudioPattern.fileExtension)
-            else { return }
+        else { return }
         
-        try? hapticEngine.start()
-        try? hapticEngine.playPattern(from: URL(fileURLWithPath: hapticPath))
+        do { try hapticEngine.start() }
+        catch { log("\(#function) -> Could not start haptic engine: \(error)") }
+        
+        do { try hapticEngine.playPattern(from: URL(fileURLWithPath: hapticPath)) }
+        catch { log("\(#function) -> Could not play pattern: \(error)") }
     }
     
     private func playHapticLoop(named filename: String) {
         guard
             let hapticEngine: CHHapticEngine = hapticEngine,
             let hapticPath: String = Bundle.main.path(forResource: filename, ofType: AppleHapticAudioPattern.fileExtension),
-            let hapticData: Data = try? Data(contentsOf: URL(fileURLWithPath: hapticPath)),
+            let hapticData: Data = hapticData(hapticPath: hapticPath),
             let appleHapticAudioPattern: AppleHapticAudioPattern = AppleHapticAudioPattern(data: hapticData),
             let appleHapticAudioPatternDictionary: [CHHapticPattern.Key: Any] = appleHapticAudioPattern.dictionaryRepresentation(),
             let hapticDuration: TimeInterval = appleHapticAudioPattern.pattern?.first(where: { $0.event?.eventDuration != nil })?.event?.eventDuration,
-            let hapticPattern: CHHapticPattern = try? CHHapticPattern(dictionary: appleHapticAudioPatternDictionary),
-            let hapticPlayer: CHHapticPatternPlayer = try? hapticEngine.makePlayer(with: hapticPattern)
-            else { return }
+            let hapticPattern: CHHapticPattern = hapticPattern(appleHapticAudioPatternDictionary: appleHapticAudioPatternDictionary),
+            let hapticPlayer: CHHapticPatternPlayer = hapticPlayer(hapticPattern: hapticPattern)
+        else { return }
         
-        try? hapticEngine.start()
+        do { try hapticEngine.start() }
+        catch { log("\(#function) -> Could not start haptic engine: \(error)") }
+        
         self.hapticPlayer = hapticPlayer
-        try? self.hapticPlayer?.start(atTime: CHHapticTimeImmediate)
+        
+        do { try self.hapticPlayer?.start(atTime: CHHapticTimeImmediate) }
+        catch { log("\(#function) -> Could not start haptic player at time CHHapticTimeImmediate: \(error)") }
+        
         startHapticLoopTimer(timeInterval: hapticDuration)
     }
     
+    private func hapticData(hapticPath: String) -> Data? {
+        var hapticData: Data?
+        do { hapticData = try Data(contentsOf: URL(fileURLWithPath: hapticPath)) }
+        catch { log("\(#function) -> Could not load haptic data: \(error)") }
+        return hapticData
+    }
+    
+    private func hapticPattern(appleHapticAudioPatternDictionary: [CHHapticPattern.Key: Any]) -> CHHapticPattern? {
+        var hapticPattern: CHHapticPattern?
+        do { hapticPattern = try CHHapticPattern(dictionary: appleHapticAudioPatternDictionary) }
+        catch { log("\(#function) -> Could not create haptic pattern: \(error)") }
+        return hapticPattern
+    }
+    
+    private func hapticPlayer(hapticPattern: CHHapticPattern) -> CHHapticPatternPlayer? {
+        var hapticPlayer: CHHapticPatternPlayer?
+        // Intentionally creating an advanced player, `CHHapticAdvancedPatternPlayer`, with `.makeAdvancedPlayer` as of iOS 18 here.
+        // Using a standard player, `CHHapticPatternPlayer`, will throw a `CHHapticError.Code.memoryError` `com.apple.CoreHaptics error -4899`.
+        // Apparently advanced players can play larger haptic patterns than standard ones, but that isn't officially documented anywhere...
+        do { hapticPlayer = try hapticEngine?.makeAdvancedPlayer(with: hapticPattern) }
+        catch { log("\(#function) -> Could not create haptic player: \(error)") }
+        return hapticPlayer
+    }
+    
     @objc private func restartHapticPlayer() {
-        try? hapticPlayer?.start(atTime: 0.0)
+        do { try self.hapticPlayer?.start(atTime: 0.0) }
+        catch { log("\(#function) -> Could not start haptic player at time 0.0: \(error)") }
     }
     
     private func startHapticLoopTimer(timeInterval: TimeInterval) {
@@ -175,7 +214,7 @@ public class Vibrator {
         guard
             let timer: Timer = hapticLoopTimer,
             timer.isValid
-            else { return }
+        else { return }
         
         timer.invalidate()
         hapticLoopTimer = nil
@@ -189,7 +228,8 @@ public class Vibrator {
     /// Called when the haptic engine fails. Will attempt to restart the haptic engine.
     private func hapticEngineDidRecoverFromServerError() {
         log("\(#function)")
-        try? hapticEngine?.start()
+        do { try hapticEngine?.start() }
+        catch { log("\(#function) -> Could not start haptic engine: \(error)") }
     }
     
 }
@@ -199,7 +239,8 @@ private extension Vibrator {
     // MARK: - Logging
     func log(_ message: String) {
         #if DEBUG
-            print("\n📳 \(String(describing: Vibrator.self)): \(#function) -> message: \(message)\n")
+            guard Vibrator.isDebugLoggingEnabled else { return }
+            print("📳 \(String(describing: Vibrator.self)) -> message: \(message)")
         #endif
     }
     
