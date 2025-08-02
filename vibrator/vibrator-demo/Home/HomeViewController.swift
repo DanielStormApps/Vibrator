@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
     @IBOutlet private weak var deviceHapticSupportLabel: UILabel!
     @IBOutlet private weak var heartHapticButton: UIButton!
